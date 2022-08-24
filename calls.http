@@ -1,0 +1,12 @@
+GET http://localhost:3000/todos
+
+POST http://localhost:3000/addtodo
+Content-Type: application/json
+
+{
+    "name":"play games"
+}
+
+GET http://localhost:3000/find?id=3
+
+DELETE http://localhost:3000/delete?id=3
