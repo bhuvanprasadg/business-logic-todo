@@ -1,11 +1,12 @@
 const { Client } = require('pg');
+require('dotenv').config();
 
 const client = new Client({
-  user: 'admin01@sde-s',
-  host: 'sde-s.postgres.database.azure.com',
-  database: 'todo',
-  password: 'Database@123',
-  port: 5432
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT
 })
 client.connect(function(err) {
   if (err) throw err;
