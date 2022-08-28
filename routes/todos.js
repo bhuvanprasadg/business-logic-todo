@@ -6,7 +6,8 @@ router.get("/", async (req, res) => {
     try {
         console.log("All Todo called");
         conn.query("SELECT * FROM todo", function (err, data, fields) {
-            res.json({
+                res.set('Access-Control-Allow-Origin', '*');
+		res.json({
                 status: "success",
                 data: data.rows,
             });
